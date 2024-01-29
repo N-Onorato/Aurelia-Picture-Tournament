@@ -1,5 +1,6 @@
 import { DragEvent, DragEventHandler, useState, useTransition } from "react";
 import ImageItem from "./ImageItem";
+import './ImageInputGrid.css'
 
 type Image = {
     id: string

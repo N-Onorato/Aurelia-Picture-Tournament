@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import './ImageItem.css'
 
 type ImageItemProps = {
     id: string;
