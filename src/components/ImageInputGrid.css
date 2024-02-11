@@ -2,8 +2,10 @@
 .image-items {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    flex-flow: row;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-content: start;
+    justify-items: start;
     min-width: 300px;
     min-height: 300px;
     margin: 10px;
@@ -11,5 +13,5 @@
     background-color: #444;
     border: 3px ridge #888;
     border-radius: 5px;
-    
+    gap: 0.2em;
 }

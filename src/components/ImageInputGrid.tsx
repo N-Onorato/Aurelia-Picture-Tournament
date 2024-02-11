@@ -1,32 +1,39 @@
-import { DragEvent, DragEventHandler, useState, useTransition } from "react";
+import { DragEvent, DragEventHandler, useContext, useState, useTransition } from "react";
 import ImageItem from "./ImageItem";
 import './ImageInputGrid.css'
+import MyContext from "../ImageContext";
+import {Image} from '../Image'
 
-type Image = {
-    id: string
-    dataUrl: string
-}
+
 
 type FileError = {
     fileName: String
     error: String
 }
 
-export default function ImageInputGrid(props) {
+export default function ImageInputGrid() {
     const [isLoading, startLoading] = useTransition()
-    const [images, setImages] = useState<Array<Image>>([])
+    const context = useContext(MyContext);
+
+    // Ensure context is not undefined
+    if (!context) {
+        throw new Error('ChildComponent must be used within a MyProvider');
+    }
     
+    const images = context?.value
+    const setImages = context?.updateValue
+
     const handleDrop: DragEventHandler = (e: DragEvent) => {
         e.preventDefault()
         e.stopPropagation()
     
         const files: FileList = e.dataTransfer.files
-        let images: Array<Image>;
+        let newImages: Array<Image>;
         let failedImages: Array<FileError>;
         startLoading(() => {
-        [images, failedImages] = parseAndValidateFiles(files)
+        [newImages, failedImages] = parseAndValidateFiles(files)
         console.log("Failed to load these dropped files", failedImages)
-        setImages(images)
+        setImages(images.concat(newImages))
         });
     }
 
