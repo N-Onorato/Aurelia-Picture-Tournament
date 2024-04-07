@@ -1,13 +1,9 @@
-# React + TypeScript + Vite
+# Picture Tournament
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application is intended to be a simple react app I'm using to Learn more about React and to implement a randomly seeded single-elimination tournament with images. Because I've done photography and sometimes you just want to find your favorite images amongst a pile.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
+## ToDO
+### Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
