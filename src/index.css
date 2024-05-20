@@ -1,11 +1,21 @@
 :root {
-  font-family: system-ui, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --font-family: system-ui, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --color-light: rgba(240, 240, 240, 0.87);
+  --background-dark: #242424;
+  --background-light: #ffffff;
+  --color-dark: #213547;
+  --link-color: #aa63cd;
+  --link-hover-dark: #4e6db1;
+  --link-hover-light: #747bff;
+  --nav-gradient: linear-gradient(#666 10%, #666 89%, #444);
+  --button-bg-light: #f9f9f9;
 
+  font-family: var(--font-family);
+  line-height: var(--line-height);
   color-scheme: light dark;
-  color: rgba(240, 240, 240, 0.87);
-  background-color: #242424;
-
+  color: var(--color-light);
+  background-color: var(--background-dark);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,47 +28,44 @@ body {
 
 nav {
   display: block;
-  background-image: linear-gradient(#666 10%, #666 89%, #444);
+  background: var(--nav-gradient);
   height: 24px;
   width: 100vw;
 }
 
-nav ~ * {
-  display: inline-block;
-}
 nav a {
   font-weight: bold;
   padding: 0 1rem;
-  margin: auto, 0;
+  margin: auto 0;
   text-align: center;
 }
 
 a {
   font-weight: 500;
-  color: #aa63cd;
+  color: var(--link-color);
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #4e6db1;
+  color: var(--link-hover-dark);
 }
-
-
 
 h1 {
   font-size: 1.4em;
   line-height: 1.1;
 }
 
-
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--color-dark);
+    background-color: var(--background-light);
   }
+
   a:hover {
-    color: #747bff;
+    color: var(--link-hover-light);
   }
+
   button {
-    background-color: #f9f9f9;
+    background-color: var(--button-bg-light);
   }
 }

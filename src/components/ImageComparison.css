@@ -1,0 +1,53 @@
+.image-comparison {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.menubar {
+  margin-bottom: 20px;
+}
+
+.menubar button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menubar button:hover {
+  background-color: #0056b3;
+}
+
+.comparison-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-by-side {
+  display: flex;
+}
+
+.side-by-side div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-by-side img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 10px;
+  cursor: pointer; /* Make the images look clickable */
+  transition: transform 0.2s; /* Smooth transform effect */
+}
+
+.side-by-side img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+}

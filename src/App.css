@@ -1,3 +1,4 @@
+/* Root container styling */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,19 +6,24 @@
   text-align: center;
 }
 
+/* Logo styling */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em var(--logo-shadow-color, #646cffaa));
 }
+
+/* React logo specific hover effect */
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Logo spin animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,20 +33,28 @@
   }
 }
 
+/* Apply spin animation if motion preference allows */
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo.spin {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Card styling */
 .card {
   padding: 2em;
+  margin: 1rem 0; /* Add margin for spacing between cards */
+  background-color: #f9f9f9; /* Optional: better visual separation */
+  border-radius: 8px; /* Optional: rounded corners for better aesthetics */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
 }
 
+/* Documentation link styling */
 .read-the-docs {
   color: #888;
 }
 
-/* Added content */
-
-
+/* Variable for default logo shadow color */
+:root {
+  --logo-shadow-color: #646cffaa;
+}

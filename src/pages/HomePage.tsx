@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import ImageInputGrid from "../components/ImageInputGrid";
-import { ComparisonPage } from ".";
 
 
 export default function HomePage() {
